@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>How to make an order</title>
+	<link rel="stylesheet" href="orderpage.css">
+	<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body>
+
+	<div id="progressbar"></div>
+	<div id="scrollPath"></div>
+
+	<header id="header">
+		<a href="index2.html" class="logo">WebCreators</a>
+	</header>
+
+	<h1>How to make an order</h1>
+<br> 
+<div class="process-wrapper">
+	<div id="progress-bar-container">
+		<ul>
+			<li class="step step01 active"><div class="step-inner">First step</div></li>
+			<li class="step step02"><div class="step-inner">Fill in the form</div></li>
+			<li class="step step03"><div class="step-inner">Check your mail</div></li>
+			<li class="step step04"><div class="step-inner">Be in touch</div></li>
+			<li class="step step05"><div class="step-inner">Finish</div></li>
+		</ul>
+	
+	<div id="line">
+		<div id="line-progress"></div>
+	</div>
+</div>
+
+<div id="progress-content-section">
+	<div class="section-content discovery active">
+		<h2>First step</h2>
+		<p>You should go to the contact us section</p>
+		</div>
+
+	<div class="section-content strategy">
+		<h2>Fill in the form</h2>
+		<p>Fill in all the fields correctly and write briefly what you want to order</p>
+	</div>
+	
+	<div class="section-content creative">
+		<h2>Check your mail</h2>
+		<p>We will send you all the details of the transaction in your mail and there you can specific your desire and how you want to do everything we will discuss there.</p>
+	</div>
+	
+	<div class="section-content production">
+		<h2>Be in touch</h2>
+		<p>We will often show you the finished parts and if you don’t like to finalize all the details and what you need we will contact you</p>
+	</div>
+	
+	<div class="section-content analysis">
+		<h2>Finish</h2>
+		<p>If you still have questions on the main page there are our social networks there you can ask</p>
+	</div>
+	</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+ <script>
+    
+    $(".step").click( function() {
+	$(this).addClass("active").prevAll().addClass("active");
+	$(this).nextAll().removeClass("active");
+});
+
+$(".step01").click( function() {
+	$("#line-progress").css("width", "3%");
+	$(".discovery").addClass("active").siblings().removeClass("active");
+});
+
+$(".step02").click( function() {
+	$("#line-progress").css("width", "25%");
+	$(".strategy").addClass("active").siblings().removeClass("active");
+});
+
+$(".step03").click( function() {
+	$("#line-progress").css("width", "50%");
+	$(".creative").addClass("active").siblings().removeClass("active");
+});
+
+$(".step04").click( function() {
+	$("#line-progress").css("width", "75%");
+	$(".production").addClass("active").siblings().removeClass("active");
+});
+
+$(".step05").click( function() {
+	$("#line-progress").css("width", "100%");
+	$(".analysis").addClass("active").siblings().removeClass("active");
+});
+
+ 
+    </script>
+</body>
+</html>

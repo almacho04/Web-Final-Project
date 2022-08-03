@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sale page</title>
+	<link rel="stylesheet" href="promotion.css">
+	<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header id="header">
+		<a href="index2.html" class="logo">WebCreators</a>
+	</header>
+
+	<section>
+		<div class="content">
+			<h2>Cool web-site = affordable price</h2>
+			<p>If you want to be in time and order your site from us with a good discount, then leave your mail below, we will immediately write to you</p>
+			<div class="countdown">
+				<div class="time"><div id="day">12</div><span>Days</span></div>
+				<div class="time"><div id="hour">21</div><span>Hours</span></div>
+				<div class="time"><div id="minute">12</div><span>Minutes</span></div>
+				<div class="time"><div id="second">21</div><span>Seconds</span></div>
+			</div>
+			<a href="#" onclick="toggle();">TO ORDER</a>
+		</div>
+		<div class="img">
+			<img src="man.png">
+		</div>
+	</section>
+
+	<div class="newsletter">
+		<h2>Leave mail</h2>
+		<p>After shipment, we will send further orders and discuss it.</p>
+		<div class="input">
+			<form>
+				<input type="email" name="" required="" placeholder="Enter Email">
+				<input type="submit" value="Submit">
+			</form>
+		</div>
+		<img src="closed.png" class="closed" onclick="toggle();">
+	</div>
+
+
+
+	<script>
+  		var countDate = new Date('May 30, 2021 00:00:00').getTime();
+
+  		function newYear() {
+  			var now = new Date().getTime();
+  			gap = countDate - now;
+
+  			var second = 1000;
+  			var minute = second * 60;
+  			var hour = minute * 60;
+  			var day = hour * 24;
+
+  			var d = Math.floor(gap / (day));
+  			var h = Math.floor((gap % (day)) / (hour));
+  			var m = Math.floor((gap % (hour)) / (minute));
+  			var s = Math.floor((gap % (minute)) / second);
+
+  			document.getElementById('day').innerText = d;
+  			document.getElementById('hour').innerText = h;
+  			document.getElementById('minute').innerText = m;
+  			document.getElementById('second').innerText = s;
+  		}
+
+  		setInterval(function(){
+  			newYear();
+  		},1000);
+
+  		function toggle() {
+  			var newsletter = document.querySelector('.newsletter');
+  			newsletter.classList.toggle('active');
+  		}
+
+  	</script>
+</body>
+</html>

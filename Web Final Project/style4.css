@@ -1,0 +1,320 @@
+body{
+    margin: 0;
+    padding: 0;
+    color:white;
+    font-family: 'Varela Round', sans-serif;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	right: 0;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	background: #00fe77;
+	box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+	z-index: 1000;
+}
+
+.logo {
+	height: 60px;
+	line-height: 60px;
+	color: #0e1623;
+	font-weight: 700;
+	font-size: 2em;
+	text-decoration: none;
+	cursor: pointer;
+	padding-left: 20px;
+	text-decoration: none;
+}
+
+.warranty, .unpaid, .local, .requirements{
+    margin: 150px auto auto auto;
+    border: 0 solid white;
+    box-shadow: 5px 10px 8px 10px #888888;
+    border-radius: 55px;
+    width: 1200px;
+    background-color: #160A32;
+    padding-bottom: 15px;
+}
+
+.warranty-up{
+    display: flex;
+    justify-content: space-around;
+}
+
+.wallet{
+    margin-top: 50px;
+}
+
+.description{
+    width: 550px;
+    padding-top: 30px;
+}
+
+#paragraph{
+    text-align: center;
+    font-size: 32px;
+    color: #00fe77;
+    padding: auto 40px auto 40px;
+}
+
+#sentenses{
+    font-size: 20px;
+    padding: auto 40px auto 40px;
+}
+
+.warranty-down{
+    display: flex;
+    padding-top: 40px;
+    border-top: dashed #00fe77;
+}
+
+.left-offer, .middle-offer, .right-offer{
+    width: 433px;
+    padding: auto 15px auto 15px;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+#par-little{
+    font-size: 28px;
+    color: #00fe77;
+}
+
+.unpaid, .local, .requirements{
+    display: flex;
+    justify-content: space-around;
+}
+
+.box1{
+    margin-top: 260px;
+}
+
+.box1-neighbor, .box2-neighbor, .box3-neighbor{
+    width: 800px;
+    height: auto
+}
+
+.box3{
+    margin-top: 30px;
+}
+
+.bottom{
+    background-color: #160A32;
+    margin-top: 80px;
+	display: block;
+	height: 240px;
+}
+
+.share-it{
+    padding-top: 50px;
+    padding-left: 80px;
+    color: #00fe77;
+    height: auto;
+    font-size: 25px;
+}
+
+.arrows {
+    width: 60px;
+    height: 72px;
+    position: absolute;
+    left: 50%;
+    margin-left: -30px;
+    top: 375%;
+    bottom: 20px;
+}
+
+.arrows path {
+	stroke: #00fe77;
+    fill: transparent;
+    stroke-width: 1px;	
+    animation: arrow 2s infinite;
+    -webkit-animation: arrow 2s infinite; 
+}
+
+@keyframes arrow
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+@-webkit-keyframes arrow
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+.arrows path.a1 {
+    animation-delay:-1s;
+    -webkit-animation-delay:-1s;
+}
+
+.arrows path.a2 {
+    animation-delay:-0.5s;
+    -webkit-animation-delay:-0.5s;
+}
+
+.arrows path.a3 {	
+    animation-delay:0s;
+    -webkit-animation-delay:0s;
+}
+
+.bot-icon {
+    font-family: 'Roboto';
+    text-align: center;
+	color: #00fe77;
+    font-size: 28px;
+    height: 10px;
+}
+
+a {
+	color: #00fe77;
+}
+
+.icons {
+    position: absolute;
+    width: 400px;
+    left: 50%;
+    margin-left: -200px;
+    top: 303%;
+    border-radius: 80px;
+    margin-top: 650px;
+}
+.icons span {
+    width: 200px;
+    line-height: 80px;
+    display: inline-block;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+.icons nav {
+    font-size: 0;
+}
+.icons a {
+    line-height: 80px;
+    width: 80px;
+    text-align: center;
+    display: inline-block;
+    background-color: #fff;
+    color: #fff;
+    overflow: hidden;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+    margin: 0 -20px;
+    box-shadow: 3px 1px 3px rgba(0, 0, 0, 0.1);
+}
+.icons a:nth-child(1) {
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    margin-left: 0;
+}
+.icons a:nth-child(1):hover {
+    background-color: rgb(26, 192, 11);
+}
+.icons a:nth-child(2):hover {
+    background-color: #3b5998;
+}
+.icons a:nth-child(3):hover {
+    background-color: rgb(30, 159, 199);
+}
+.icons a:nth-child(4) {
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    margin-right: 0;
+}
+.icons a:nth-child(4):hover {
+    background-color: rgb(172, 0, 120);
+}
+.icons:hover span, .icons.hover span {
+    opacity: 0;
+}
+.icons:hover a, .icons.hover a {
+    border-radius: 50%;
+    margin: 0 10px;
+	color: #00fe77;
+    font-size: 28px;
+}
+.icons:hover a:hover, .icons.hover a:hover {
+    color: #fff;
+}
+
+@media(max-width: 700px) {
+    body{
+        text-align: center;
+    }
+
+    .warranty, .unpaid, .local, .requirements{
+        width: 480px;
+        height: auto;
+        display: block;
+    }
+
+    .warranty-up, .warranty-down{
+        display: block;
+    }
+
+    .description #paragraph{
+        padding-left: 55px;
+    }
+
+    .description #sentenses{
+        width: 400px;
+        padding-left: 35px;
+    }
+
+    .box1-neighbor, .box2-neighbor, .box3-neighbor{
+        width: auto;
+    }
+
+    .box1-neighbor #paragraph, .box2-neighbor #paragraph, .box3-neighbor #paragraph{
+        width: auto;
+    }
+
+    .box1-neighbor #sentenses, .box2-neighbor #sentenses, .box3-neighbor #sentenses{
+        width: auto;
+        padding: auto 10px auto 10px;
+    }
+
+    .box1-neighbor #par-little, .box2-neighbor #par-little{
+        width: auto;
+    }
+
+    .description{
+        width: 450px;
+        height: auto;
+    }
+
+    .left-offer, .middle-offer, .right-offer {
+        width: 420px;
+        height: auto;
+    }
+
+    .bottom{
+        height: 415px;
+    }
+
+    .share-it{
+        padding-top: 40px;
+        padding-left: 0;
+    }
+
+    .arrows{
+        top: 635%;
+    }
+
+    .icons{
+        top: 562%;
+    }
+}

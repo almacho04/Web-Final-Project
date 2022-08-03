@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Web Creators</title>
+	<link rel="stylesheet" href="style2.css">
+	<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="jarallax.css">
+	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+	<div class="pup">
+		<div class="pup-content">
+			<img onclick="close_pup()" src="./images/close.jpg" alt="" class="closed" width="7%">
+			<img onclick="close_pup()" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAV1BMVEX///8jHyAAAAAJAAALAAMNBAdoZmdiYGFmZGRta2sFAABpZ2hwbm8YExRbWFlhXl+dnJweGhsTDQ/T09O0s7M2MzNMSUqHhYbFxMWWlJQXEhNWVFRzcnIz5JTBAAAEQklEQVR4nO2d63aqMBCFBUVEpFatWtu+/3MeKeUUJbsEGEgya3+/XbMyzhWSDIsFIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIEeR026X59X0i6e/XLN3dThNJt+F0iZOPojjG57cJpL+d42NRfCTxxZmOr3ERVRzijbj0dXz4kV7Er+LSrXiNo19WL8LSX1YN6W5UPDUVjKJkLyp9nzxIj1046qWIplPxScGouAgKt+TJhKWKn2LCP5Nn4Q6MeGstQs6KzxYsZd+EZNuzK1qriJJURPSmrWD0sRMR3YfUoGGUSGRUgwXvgSjz5/UhM2kooeKLScGoyATW3I/r0bSQ8Y5qctE7x6vIqvvw3sqlIioCBaN4qt73D84H81pGdTcPnUyDw1ls3fa8ASOOsWIKFIziKVr7TtZoOcnQNhy5aLRai67cGnPWG27FFMqTbuvHL2lQLKIYlG7qe2Eszt8q9nfUDVTQmQVL2i1yvay+KuKolmvoB4EdtZ9rwSzq0kUrcP7rk27SJVJw/n60xR79+6vcWkYGFXQagzVYRdsqlvuZZH6Bjrq0iyGvXbQCJvqlTUbN/Vfwj2JtEYuZ7y5aAZN9Z+nHddB5mXhkPTAWcQzKv0UfCY7FvxwVlwmPYrBmSF2EMSi+SSACLhrIHpuQLFgCkwYoGrBMDHgymQmYNpamd4E7qKBnWbQJdLtVW0WsoKcuWgFTR8tR8y1S0L5hdwJM/9tHK+6QgktHL53swbHY3Fv5gr/yOAZr4KNQo/RDS/ubRZvA5f93wGBjsAbWuR9H/YIxGIQFS2DR+FYx6BisgUVjmy8ytN8RiotWwFg8ns37jqDv8RjoqGBPDrfn3gLTDVAwmCTzC+w7jQrOf9RCANiYtdkGFoM1sLC3FAzQRSssHTW0LNoEFvcHBYOMwZqs21FDtmBJp4r+Pw920eGoYbtoxRfqQ0u2ChS8OyrqRO9dalDNNgadD3NzlmsC1NtQfRyqz6Xq66FNTxN0LKrvS9U/W6h/PlT/jN/rPY1hf9F71L9rU/++dMg776Dqovp9C/V7T2vt+4fde8CwWw3DUdXv46s/iwELvZbzNLhMKDkTpf5cm10M1sBY9PdsIj5fao4tfATa04yq/oyw+nPe8MaFlrP6Q+9bYEf1LBbxRUsld2bU33tSf3dN/f3D8XdIPXdU9feAZe5ye9zd4KkK/ZaGJyo4LhqCMxWgJKczFaQsWOLlXAzZ2SYwZblzVPXzabBbyc8YctKG658TpX7Wl/55bWjm3tiI8Wfm3nrmuYnzvwrfzzz7cv6aaJp9OeH8UgezL00zaKWeAwyl38EMWv1zhPXPgm7N85Z9VH1yVCfzvPXPZH+cqy9frjyYq199G6GY+NsIhctvIyzK71tk+/WE37fI95nT71sQQgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQo5B8vlDCBniO5qwAAAABJRU5ErkJggg==" alt="logo" width="10%">
+			<input id="username" type="text" placeholder="Username" name="username" required autofocus>
+			<input id="pass" type="password" placeholder="Password" name="password" required>
+			<input id="pass_again" type="password" placeholder="Password again" name="password" required>
+			<button id="log_btn" onclick="log_php(username.value, pass.value)" class="btn btn-outline-dark">Login</button>
+			<button id="reg_btn" onclick="reg_php(username.value, pass.value, pass_again.value)" class="btn btn-outline-dark">Register</button>
+			<label for="switch" id="register" onclick="reg_btn()">Don't have an account?</label>
+			<!-- <input type="submit" name="" id="" class="btn btn-outline-dark" value="Login"> -->
+			<!-- </form> -->
+		</div>
+	</div>
+	<script>
+		function pup(){
+			var btn = document.getElementById("btn_white").innerHTML;
+			if(btn == "Log In"){
+				// alert("mo");
+				document.querySelector(".pup").style.display = "flex";
+				document.querySelector(".pup").style.zIndex = "2000";
+				$(".pup").animate({opacity: '1'} , "slow");
+				document.body.style.overflow = "hidden";
+			}
+			else{
+				logout();
+			}
+		}
+
+		function close_pup(){
+			$(".pup").animate({opacity: '0'}, "slow");
+			document.body.style.margin = "0";
+			document.body.style.height = "100%";
+			document.body.style.overflow = "scroll";
+			document.getElementById("username").value = "";
+			document.getElementById("pass").value = "";
+			document.querySelector(".pup").style.display = "none";
+		}
+
+		function login(name){
+			document.querySelector(".user_profile").style.display = "inline";
+			document.getElementById("user_name").innerHTML = name;
+			document.getElementById("btn_white").innerHTML = "Log Out";
+			close_pup();
+		}
+
+		function logout(){
+			document.querySelector(".user_profile").style.display = "none";
+			document.getElementById("btn_white").innerHTML = "Log In";
+		}
+
+		var user = "";
+		function reg_btn(){
+			var s = document.getElementById("register");
+			if(s.innerHTML == "Don't have an account?"){
+				document.getElementById("reg_btn").style.display = "inline";
+				document.getElementById("log_btn").style.display = "none";
+				document.getElementById("pass_again").style.display = "block";
+				document.querySelector(".pup-content").style.height = "380px";
+				s.innerHTML = "You have an account?";
+			}
+			else{
+				document.getElementById("reg_btn").style.display = "none";
+				document.getElementById("log_btn").style.display = "inline";
+				document.getElementById("pass_again").style.display = "none";
+				document.querySelector(".pup-content").style.height = "320px";
+				s.innerHTML = "Don't have an account?";
+			}
+		}
+		function log_php(uname, pass){
+			$.ajax({
+				url : 'login.php',
+				type : 'POST',
+				data: {username: uname, password: pass},
+				success : function (result) {
+					console.log (result); // Here, you need to use response by PHP file.
+					if(result == "Logged IN!") {
+						login(uname);
+						user = uname;
+					}
+					else alert("Wrong input");
+				},
+				error : function () {
+					console.log ('error');
+				}
+			});
+		}
+
+		function reg_php(uname, pass, pass_again){
+			var x = 0;
+			var y = 0;
+			var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+			if (pass.length < 8){
+				alert("less than 8 characters");
+			}else{
+				x++;
+			}
+			for(var i=0; i<pass.length; i++){
+				for(var j=0; j<pass.length; j++){
+					if( pass.charAt(j) ==  alphabet.charAt(i) ){
+						y++;
+					}
+				}
+			}
+			if (y==0){
+				alert("Not capital letters");
+			}
+			if(pass == pass_again && x>=1 && y>=1){
+				$.ajax({
+					url : 'register.php',
+					type : 'POST',
+					data: {username: uname, password: pass},
+					success : function (result) {
+						console.log (result); // Here, you need to use response by PHP file.
+						if(result == "Success!") close_pup();
+						else alert("Wrong input");
+					}, error : function () {
+						console.log ('error');
+					}
+				});
+			}
+			else{
+				alert("different password inputs!");
+			}
+		}
+
+	</script>
+
+	<header id="header">
+		<a href="#" class="logo">WebCreators</a>
+		<div id="toggle"></div>
+		<div id="navbar">
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#about_us">About</a></li>
+				<li><a href="#service_">Services</a></li>
+				<li><a href="index4.html">Protection</a></li>
+				<li><a href="orderpage.html">Order</a></li>
+				<li><a href="index5.html">Team</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li><a href=""> <div class="pic">
+					<div class="user_profile">
+						<img id="profile_img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe81Qc1bl-TCbUaI1S-FFQK8jWZJKmOp3SEQ&usqp=CAU" alt="">
+						<p id="user_name"></p>
+					</div>
+					<div class="bt">
+						<button id="btn_white" onclick="pup()" class="btn btn-outline-light btn-lg">Log In</button>
+					</div>
+				</div> </a></li>
+			</ul>
+		</div>
+	</header>
+
+
+
+
+	<!--Sale-->
+    <div class="popup">
+    	<div class="content_sale">
+    		<div class="close"></div>
+    		<div class="img_sale">
+    			<img src="sale.svg">
+    		</div>
+    		<div class="text_sale">
+    		<div>
+    			<h3>Special Offer</h3>
+    			<h2>20<sup>%</sup><span> Off</span></h2>
+    			<p>Only before the next month you can buy any website with special price</p>
+    			<a href="promotion.html">Get the buy</a>
+    		</div>
+    		</div>
+    	</div>
+    </div>
+
+	<style>
+		#register{
+			padding: 10px 0;
+			cursor: pointer;
+			font-size: 14px;
+			display: block;
+			width: fit-content;
+		}
+		#pass_again, #reg_btn{
+			display: none;
+		}
+		textarea{
+			display: block;
+			margin: 10px auto;
+		}
+	</style>
+	<!--Main Page-->
+
+
+	<section class="main">
+		<div class="content_main">
+			<div class="main_text">
+				<h2>We develop websites<br>with <span data-text = "Creative...">Creative...</span></h2>
+				<p>A unique design, any complexity for your business tasks<br>If you need to create a platform for sales and attracting a new flow of customers in the shortest possible timeCreate an exclusive offer for the target customer, according to your product</p>
+			</div>
+			<div class="main_img">
+				<img src="bala.svg" class="bala">
+			</div>
+		</div>
+
+		
+			<ul class = "icons">
+				<li><a href="#"><img src="facebook.png" alt="facebook"></a></li>
+				<li><a href="#"><img src="twitter.png" alt="twitter"></a></li>
+				<li><a href="#"><img src="instagram.png" alt="instagram"></a></li>
+			</ul>
+	</section>
+
+			
+			<!--Little Cloud-->
+			<div class="clouds">
+				<img src="cloud1.png" style="--i:1;">
+				<img src="cloud2.png" style="--i:2;">
+				<img src="cloud3.png" style="--i:3;">
+				<img src="cloud4.png" style="--i:4;">
+				<img src="cloud5.png" style="--i:5;">
+			</div>
+
+
+	<!--About us page-->
+	<section class="About_us" id="about_us">
+		<div class="box">
+			<h2 data-jarallax-element = "0 -200">About LLP "Web Creators"</h2>
+			<div class="cont_img">
+				<div class="imgbx jarallax">
+					<img src="photo.jpg" class="jarallax-img">
+				</div>
+				<div class="txt_img" data-jarallax-element = "-200 0">
+					<p>LLP "Web Creators" - founded in 2015, we started our activity as a studio for the development of websites, after we expanded the scope of application, we covered the whole range of modern advertising and web development of high-load sites, we have experience in creating portals and mobile applications.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="About_us" id="about_us">
+		<div class="box">
+			<h2 data-jarallax-element = "0 200">Design is important</h2>
+			<div class="cont_img">
+				<div class="imgbx jarallax">
+					<img src="photo1.jpg" class="jarallax-img">
+				</div>
+				<div class="txt_img" data-jarallax-element = "-200 0">
+					<p>In our work, we are guided by analysis, immersion and strategic design thinking. The professional skills of our specialists are being improved every day. We are maximally interested in the successful promotion of our clients, since for us it is more than just a partnership!</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="About_us" id="about_us about_us3">
+		<div class="box">
+			<h2 data-jarallax-element = "0 -200">Professional team</h2>
+			<div class="cont_img">
+				<div class="imgbx jarallax">
+					<img src="photo2.jpg" class="jarallax-img">
+				</div>
+				<div class="txt_img" data-jarallax-element = "-200 0">
+					<p>We set ourselves ambitious goals: to be the best in everything we do. This applies not only to the products and technologies we consider for our customers, but also to our internal processes. Striving to occupy a leading position in the competitive environment of all employees of the "Web Creators" company, regardless of the business unit, service or city in which they work.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<div id="about_" class="about_">
+
+		<h1>Why we are most advanced website inventors?</h1>
+
+			<div class="row_">
+
+  				<div class="content_">
+			    <p>1) We conduct marketing analysis(Analysis of your target audience and its needs, objection;
+			      Identify your strengths; We make up the UTP)<br><br>
+
+			      2) Analyze your competitors(The structure is approved, we start developing the site design; Introduction of WOW-effects: animation, pop-ups, quiz polls, capture forms)<br><br>
+			      3) We promote the site in the search results(Customize and launch a contextual advertising on Google or Yandex; Testing each ad; We increase the site in the top search engine results).
+			    
+			    </p>
+  
+  </div>
+
+  <div class="image_">
+    <img src="Website designer-bro.svg" alt="">
+  </div>
+
+</div>
+
+
+</div>
+
+
+
+	<div id="faq_" class="faq_">
+
+  <h1>Frequent Questions</h1>
+
+<div class="row_">
+
+<div class="image_">
+  <img src="Usability testing-pana.svg" alt="">
+</div>
+
+<div class="accordion-container_">
+
+  <div class="accordion_">
+    <div class="accordion-header_">
+      <span>+</span>
+      <h3>How much will it cost?</h3>
+    </div>
+    <div class="accordion-body_">
+      <p>This is due to your conditions. How you want to see your site and what posts it will do will all be taken into account.</p>
+    </div>
+  </div>
+
+  <div class="accordion_">
+    <div class="accordion-header_">
+      <span>+</span>
+      <h3>How to update website?</h3>
+    </div>
+    <div class="accordion-body_">
+      <p>You will be given specific instructions and can still ask about it to our agency.</p>
+    </div>
+  </div>
+
+
+  <div class="accordion_">
+    <div class="accordion-header_">
+      <span>+</span>
+      <h3>How long it takes to design?</h3>
+    </div>
+    <div class="accordion-body_">
+      <p>
+        More or less will take 1 week. The complexity can be extended.</p>
+    </div>
+  </div>
+
+ 
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<div id="service_" class="service_">
+
+<h1>Our services</h1>
+
+<div class="row_">
+
+  <div class="image_">
+    <img src="Good team-bro.svg" alt="">
+  </div>
+  <div class="content_">
+    <h3>Website development</h3>
+    <p>As practice shows, programming alone isn't enough to make a website work for you. That's why many stakeholders pay great attention to design and marketing. Respectively, your web development team should fit the project's objectives and consist of specialists with diverse skills and knowledge.</p>
+   
+  </div>
+
+</div>
+
+<div class="row_">
+
+  <div class="content_">
+    <h3>Mobile freindly</h3>
+    <p>Having a mobile-friendly website is a critical part of your online presence. In many countries, smartphone traffic now exceeds desktop traffic.</p>
+
+  </div>
+  <div class="image_">
+    <img src="Web devices-bro (1).svg" alt="">
+  </div>
+
+</div>
+
+<div class="row_">
+
+  
+  <div class="image_">
+    <img src="Asset selection-rafiki.svg" alt="">
+  </div>
+  <div class="content_">
+    <h3>Responsive design</h3>
+    <p>Responsive layouts automatically adjust and adapt to any device screen size, whether it is a desktop, a laptop, a tablet, or a mobile phone.</p>
+  
+  </div>
+
+</div>
+
+
+
+
+<div class="row_">
+
+  <div class="content_">
+    <h3>Graphic design</h3>
+    <p>We expect graphics design websites to be a little bit more creative, right? Well, it depends. Let’s look at this collection of graphic design websites to figure out what we are talking about.</p>
+   
+  </div>
+  <div class="image_">
+    <img src="Setup Analytics-bro.svg" alt="">
+  </div>
+
+</div>
+
+</div>
+
+<div class="review_" id="review_">
+  <h1>What people says about us</h1>
+  <p class="description_">Here are a few reviews from our customers</p>
+
+  <div class="box-container_">
+ 
+      <div class="box_">
+          <p>"Professional team of the Web Inventors professionals They know what they are doing with the current time."</p>
+          <h3>--Omar Polat</h3>
+          <img src="p1.png" alt="">
+      </div>
+
+      <div class="box_">
+          <p>"Firstly, I would like to thank the entire team of the Web Inventors for their hard work and the deducation."</p>
+          <h3>--Makhmud Assentay</h3>
+          <img src="p2.png" alt="">
+      </div>
+      
+      <div class="box_">
+          <p>"Working with Web Inventors has been a pleasure. The work is done by the talented technical team. Well done web developers."</p>
+          <h3>--Kozhan Nurassyl</h3>
+          <img src="p3.png" alt="">
+      </div>
+      <div class="box_">
+        <p>" I'm glad I chose this agency. The site that they created is very productive and very beautiful in design."</p>
+        <h3>--Magzhan Abish</h3>
+        <img src="p4.png" alt="">
+    </div>
+ 
+  </div>
+
+</div>
+
+
+
+<div section id="bd_" class="bd_">
+
+  
+<div class="blog-posts_">
+ 
+  
+
+  <div class="post_">
+    <img src="Adidas.jpeg" alt="" class="post-img_">
+    <div class="post-content_">
+      <h3>Our company was very lucky to work with this agency. All the work that they do is very high quality and we are interested in how they could collect such professional programmers. We are in close contact with Web Inverters</h3>
+      <span class="date_">July 13, 2014</span>
+    </div>
+  </div>
+
+ 
+
+  <div class="post_">
+    <img src="Tesla-logo-770x500.jpeg" alt="" class="post-img_">
+    <div class="post-content_">
+      <h3>We are in close contact with Web Inverters, in some difficult situations the agency reliably helps not only in websites but also in our projects and presentations. All the work that they do is very high quality. They could collect such professional.</h3>
+      <span class="date_">March 1, 2019</span>
+    </div>
+  </div>
+
+  <div class="post_">
+    <img src="google-logo.jpeg" alt="" class="post-img_">
+      <div class="post-content_">
+        <h3>Our company has been looking for good agencies for the website site for a long time. So our products demanded good advertising and Web Inventers did very well. I hope in the future we will have business with this agent</h3>
+        <span class="date_">December 25, 2016</span>
+      </div>
+    </div>
+</div>
+</div>
+
+<!--Contacts-->
+<div class="contact" id="contact">
+	<div class="container">
+		<h2>Contact us</h2>
+		<div class="row100">
+			<div class="col">
+				<div class="inputBox">
+					<input type="text" name="" required="required">
+					<span class="text">First Name</span>
+					<span class="line"></span>
+				</div>
+			</div>
+
+			<div class="col">
+				<div class="inputBox">
+					<input type="text" name="" required="required">
+					<span class="text">Last Name</span>
+					<span class="line"></span>
+				</div>
+			</div>
+		</div>
+
+		<div class="row100">
+			<div class="col">
+				<div class="inputBox">
+					<input type="text" name="" required="required">
+					<span class="text">Email</span>
+					<span class="line"></span>
+				</div>
+			</div>
+
+			<div class="col">
+				<div class="inputBox">
+					<input type="text" name="" required="required">
+					<span class="text">Mobile</span>
+					<span class="line"></span>
+				</div>
+			</div>
+		</div>
+
+		<div class="row100">
+			<div class="col">
+				<div class="inputBox textarea">
+					<textarea required="required"></textarea>
+					<span class="text">Type your message here...</span>
+					<span class="line"></span>
+				</div>
+			</div>
+		</div>
+
+		<div class="row100">
+			<div class="col">
+				<input type="submit" value="Send">
+			</div>
+		</div>
+	</div>
+</div>
+	
+	<footer>
+		<div class="cnt">
+			<div class="se abus">
+				<h2>About us</h2>
+				<p>A unique design, any complexity for your business tasks. If you need to create a platform for sales and attracting a new flow of customers in the shortest possible timeCreate an exclusive offer for the target customer, according to your product</p>
+
+				<ul class = "sci">
+					<li><a href="#"><img src="facebook.png" alt="facebook"></a></li>
+					<li><a href="#"><img src="twitter.png" alt="twitter"></a></li>
+					<li><a href="#"><img src="instagram.png" alt="instagram"></a></li>
+				</ul>
+			</div>
+
+			<div class="se menu_links">
+				<h2>Menu</h2>
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#about_us">About</a></li>
+					<li><a href="#service_">Services</a></li>
+					<li><a href="index4.html">Protection</a></li>
+					<li><a href="orderpage.html">Order</a></li>
+					<li><a href="index5.html">Team</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</div>
+
+			<div class="se contacts">
+				<h2>Contact Info</h2>
+				<ul class="inf">
+					<li>
+						<span><img src="map.jpg" alt="" width="30px"></span>
+						<span>1/1 Abylai Khan Street<br>
+							Kaskelen,Almaty<br>Kazakhstan
+						</span>
+					</li>
+
+					<li>
+						<span><img src="call.png" alt="" width="30px"></span>
+						<p><a href="tel:+7-747-777-77-77">+7-747-777-77-77</a><br>
+							<a href="tel:+7-747-777-77-77">+7-747-777-17-17</a>
+						</p>
+					</li>
+
+					<li>
+						<span><img src="mail.png" alt="" width="30px"></span>
+						<p><a href="mailto:info-sdu@web-marketing.kz">info-sdu@web-marketing.kz</a></p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+
+	<div class="copy_txt">
+		<p>Almaty Web Developers 2021s</p>
+	</div>
+
+	<script src="anime.min.js"></script>
+	<script src="jarallax.js"></script>
+	<script src="jquery-3.6.0.min.js"></script>
+	<script src="jarallax-element.js"></script>
+	<script>
+		const menuToggle = document.querySelector('#toggle');
+  		const menuToggleNavbar = document.querySelector('#navbar');
+  		const menuToggleHeader = document.querySelector('#header');
+
+ 		 document.onclick = function(e) {
+  			if(e.target.id !== 'header' && e.target.id !== 'toggle' && e.target.id !== 'navbar') {
+				menuToggle.classList.remove('active');
+  				menuToggleNavbar.classList.remove('active');
+			}
+  		}
+  
+  		toggle.onclick = function() {
+  			menuToggle.classList.toggle('active');
+  	 		menuToggleNavbar.classList.toggle('active');
+  		}
+
+  		jarallax(document.querySelectorAll('.jarallax'), {
+    		speed: 0.5
+		});
+
+		const popup = document.querySelector('.popup');
+		const close = document.querySelector('.close');
+
+		window.onload = function(){
+			setTimeout(function(){
+				popup.style.display = "block";
+			}, 2000);
+		}
+  		
+  		close.addEventListener('click', () => {
+  			popup.style.display = "none";
+  		});
+
+
+  		$(document).ready(function(){
+	    	$('.accordion-header_').click(function(){
+	      	$('.accordion_ .accordion-body_').slideUp();
+	      	$(this).next('.accordion-body_').slideDown();
+	      	$('.accordion_ .accordion-header_ span').text('+');
+	      	$(this).children('span').text('-');
+
+    		}); 
+  		});																												
+	</script>
+</body>
+</html>
